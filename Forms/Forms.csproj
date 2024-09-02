@@ -1,0 +1,60 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net8.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
+        <ApplicationManifest>app.manifest</ApplicationManifest>
+        <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
+    </PropertyGroup>
+
+
+    <ItemGroup>
+        <PackageReference Include="Avalonia" Version="11.0.6"/>
+        <PackageReference Include="Avalonia.Desktop" Version="11.0.6"/>
+        <PackageReference Include="Avalonia.Themes.Fluent" Version="11.0.6"/>
+        <PackageReference Include="Avalonia.Fonts.Inter" Version="11.0.6"/>
+        <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
+        <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.0.6"/>
+    </ItemGroup>
+
+
+    <ItemGroup>
+      <None Remove="Image\Active indicator.png" />
+      <AvaloniaResource Include="Image\Active indicator.png" />
+      <None Remove="Image\Active line.png" />
+      <AvaloniaResource Include="Image\Active line.png" />
+      <None Remove="Image\Default indicator.png" />
+      <AvaloniaResource Include="Image\Default indicator.png" />
+      <None Remove="Image\Default line.png" />
+      <AvaloniaResource Include="Image\Default line.png" />
+      <None Remove="Image\IconL.png" />
+      <AvaloniaResource Include="Image\IconL.png" />
+      <None Remove="Image\IconX.png" />
+      <AvaloniaResource Include="Image\IconX.png" />
+      <None Remove="Image\Logo.png" />
+      <AvaloniaResource Include="Image\Logo.png" />
+      <None Remove="Image\Muted button.png" />
+      <AvaloniaResource Include="Image\Muted button.png" />
+      <None Remove="Image\Next.png" />
+      <AvaloniaResource Include="Image\Next.png" />
+      <None Remove="Image\Yes.png" />
+      <AvaloniaResource Include="Image\Yes.png" />
+      <None Remove="Image\Paint.png" />
+      <AvaloniaResource Include="Image\Paint.png" />
+      <None Remove="Image\Reload.png" />
+      <AvaloniaResource Include="Image\Reload.png" />
+      <None Remove="Image\NumberConfirmed.png" />
+      <AvaloniaResource Include="Image\NumberConfirmed.png" />
+      <None Remove="Image\GoodPassword.png" />
+      <AvaloniaResource Include="Image\GoodPassword.png" />
+      <None Remove="Image\EmailIcon.png" />
+      <AvaloniaResource Include="Image\EmailIcon.png" />
+      <None Remove="Image\PhoneIcon.png" />
+      <AvaloniaResource Include="Image\PhoneIcon.png" />
+      <None Remove="Image\AddNewIcon.png" />
+      <AvaloniaResource Include="Image\AddNewIcon.png" />
+      <None Remove="Image\SaveIcon.png" />
+      <AvaloniaResource Include="Image\SaveIcon.png" />
+    </ItemGroup>
+</Project>

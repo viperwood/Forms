@@ -1,0 +1,479 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        MinHeight="600" MinWidth="800"
+        x:Class="Forms.RegistrationWindow"
+        ExtendClientAreaChromeHints="NoChrome"
+        ExtendClientAreaToDecorationsHint="True"
+        Title="Forms">
+    <ScrollViewer>
+        <Grid 
+            Background="White"
+            RowDefinitions="* *"
+            ColumnDefinitions="* * *">
+            <StackPanel 
+                Grid.Column="0"
+                Grid.Row="0">
+                <StackPanel 
+                    VerticalAlignment="Center"
+                    Margin="20"
+                    Orientation="Horizontal">
+                    <Image 
+                        Width="24"
+                        Height="24"
+                        Source="Image/Logo.png"/>
+                    <TextBlock
+                        Foreground="#242731"
+                        FontFamily="Raleway"
+                        FontSize="16"
+                        FontWeight="700"
+                        Margin="13 0  0 0"
+                        Text="company name"
+                        VerticalAlignment="Center"/>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel
+                IsVisible="True"
+                Name="FerstStapReg"
+                Grid.Column="1"
+                Grid.Row="0">
+                <StackPanel
+                    VerticalAlignment="Center"
+                    Margin="0 30 0 0"
+                    Orientation="Horizontal">
+                    <Image
+                        Source="Image/Active indicator.png"/>
+                    <Image
+                        Margin="6 0"
+                        Source="Image/Default line.png"/>
+                    <Image
+                        Source="Image/Default indicator.png"/>
+                    <Image
+                        Margin="6 0"
+                        Source="Image/Default line.png"/>
+                    <Image
+                        Source="Image/Default indicator.png"/>
+                </StackPanel>
+                <StackPanel 
+                    Margin=" 0 40 0 0">
+                    <TextBlock 
+                        FontSize="32"
+                        Foreground="#242731"
+                        FontFamily="Poppins"
+                        FontWeight="700"
+                        Text="Registration"/>
+                    <TextBlock
+                        Margin="0 16 0 0"
+                        FontSize="16"
+                        FontFamily="Roboto"
+                        Foreground="#575F6E"
+                        Text="Fill in the registration data. It will take a couple of minutes. All you need is a phone number and e-mail"
+                        TextWrapping="Wrap"/>
+                </StackPanel>
+                <StackPanel
+                    Name="StapOne">
+                    <Border
+                        Name="BorderEvent"
+                        Margin="0 32 0 0"
+                        CornerRadius="8"
+                        Background="#F0F2F4">
+                        <Grid 
+                            ColumnDefinitions="50 * 50"
+                            RowDefinitions="*">
+                            <StackPanel 
+                                VerticalAlignment="Center"
+                                Grid.Column="0">
+                                <Image
+                                    Margin="16"
+                                    Width="24"
+                                    Source="Image/IconL.png"/>
+                            </StackPanel>
+                            <StackPanel 
+                                VerticalAlignment="Center"
+                                Grid.Column="1">
+                                <TextBlock 
+                                    TextWrapping="Wrap"
+                                    Foreground="#242426"
+                                    Text="We take privacy issues seriously. You can be sure that your personal data is securely protected."/>
+                            </StackPanel>
+                            <StackPanel 
+                                VerticalAlignment="Center"
+                                Grid.Column="2">
+                                <Image 
+                                    Tapped="CloseEvent"
+                                    Margin="16"
+                                    Width="24"
+                                    Source="Image/IconX.png"/>
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                    <Border 
+                        Margin="0 32 0 0"
+                        BorderBrush="#E2E4E5"
+                        BorderThickness="1"
+                        CornerRadius="8">
+                        <StackPanel>
+                            <TextBlock
+                                FontFamily="Poppins"
+                                FontWeight="400"
+                                FontSize="14"
+                                Foreground="#242426"
+                                Margin="16"
+                                Text="Enter your phone number"/>
+                            <StackPanel 
+                                Margin=" 0 0 0 16"
+                                Orientation="Horizontal">
+                                <ComboBox 
+                                    Background="Transparent"
+                                    Width="80"
+                                    Foreground="#242426"
+                                    Margin="16 0 16 0"
+                                    SelectedIndex="0"
+                                    BorderThickness="0 0 0 1"
+                                    BorderBrush="#E2E4E5">
+                                    <ComboBoxItem>+1</ComboBoxItem>
+                                    <ComboBoxItem>+7</ComboBoxItem>
+                                    <ComboBoxItem>+365</ComboBoxItem>
+                                </ComboBox>
+                                <MaskedTextBox 
+                                    Background="Transparent"
+                                    Foreground="#242426"
+                                    Mask="000 000-0000"
+                                    BorderThickness="0 0 0 1"
+                                    BorderBrush="#E2E4E5"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                    <Button 
+                        Click="SendCodeButton"
+                        Margin="0 16 0 37"
+                        Width="137"
+                        Background="Transparent"
+                        BorderThickness="1"
+                        Foreground="#242731"
+                        BorderBrush="#BBBFC1"
+                        HorizontalContentAlignment="Center"
+                        FontWeight="500"
+                        FontFamily="Poppins"
+                        FontSize="16"
+                        Content="Send Code"/>
+                </StackPanel>
+                
+                <StackPanel
+                    Name="StapTwo">
+                    <Button 
+                        Click="SendCodeButton"
+                        Margin="0 16 0 37"
+                        Width="137"
+                        Background="Transparent"
+                        BorderThickness="1"
+                        Foreground="#242731"
+                        BorderBrush="#BBBFC1"
+                        HorizontalContentAlignment="Center"
+                        FontWeight="500"
+                        FontFamily="Poppins"
+                        FontSize="16"
+                        Content="Send Code"/>
+                </StackPanel>
+            </StackPanel>
+            
+            <StackPanel
+                IsVisible="False"
+                Name="SecondStapReg"
+                Grid.Column="1"
+                Grid.Row="0">
+                <StackPanel
+                    VerticalAlignment="Center"
+                    Margin="0 30 0 0"
+                    Orientation="Horizontal">
+                    <Image
+                        Source="Image/Active indicator.png"/>
+                    <Image
+                        Margin="6 0"
+                        Source="Image/Active line.png"/>
+                    <Image
+                        Source="Image/Active indicator.png"/>
+                    <Image
+                        Margin="6 0"
+                        Source="Image/Default line.png"/>
+                    <Image
+                        Source="Image/Default indicator.png"/>
+                </StackPanel>
+                <StackPanel 
+                    Margin=" 0 40 0 0">
+                    <TextBlock 
+                        FontSize="32"
+                        Foreground="#242731"
+                        FontFamily="Poppins"
+                        FontWeight="700"
+                        Text="Registration"/>
+                    <TextBlock
+                        Margin="0 16 0 0"
+                        FontSize="16"
+                        FontFamily="Roboto"
+                        Foreground="#575F6E"
+                        Text="Fill in the registration data. It will take a couple of minutes. All you need is a phone number and e-mail"
+                        TextWrapping="Wrap"/>
+                </StackPanel>
+                <StackPanel>
+                    <Border
+                        Margin="0 32 0 0"
+                        BorderBrush="#E2E4E5"
+                        BorderThickness="1"
+                        CornerRadius="8">
+                        <StackPanel>
+                            <Grid
+                                RowDefinitions="* *"
+                                ColumnDefinitions="2* *">
+                                <StackPanel
+                                    VerticalAlignment="Center"
+                                    Grid.Column="0"
+                                    Grid.Row="0">
+                                    <TextBlock
+                                        FontFamily="Roboto"
+                                        FontWeight="400"
+                                        Foreground="#242426"
+                                        FontSize="18"
+                                        Margin="8 8 8 2"
+                                        Text="+1 555 555-1234"/>
+                                </StackPanel>
+                                <StackPanel
+                                    VerticalAlignment="Center"
+                                    Grid.Column="0"
+                                    Grid.Row="1">
+                                    <TextBlock
+                                        FontFamily="Poppins"
+                                        FontWeight="400"
+                                        Foreground="#575F6E"
+                                        FontSize="13"
+                                        Margin="8 0 8 8 "
+                                        Text="Number not confirmed yet"/>
+                                </StackPanel>
+                                <StackPanel
+                                    HorizontalAlignment="Right"
+                                    Grid.Column="1"
+                                    Grid.Row="1">
+                                    <Image
+                                        Margin="8"
+                                        Width="24"
+                                        Source="Image/Paint.png"/>
+                                </StackPanel>
+                            </Grid>
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+                <Grid
+                    RowDefinitions="*"
+                    ColumnDefinitions="2* *">
+                    <StackPanel
+                        Grid.Column="0"
+                        Margin="0 32 0 0">
+                        <TextBlock
+                            Foreground="#242426"
+                            FontFamily="Poppins"
+                            FontSize="13"
+                            FontWeight="400"
+                            Text="Confirmation code"/>
+                        <MaskedTextBox
+                            Margin="0 8 0 0"
+                            BorderBrush="#007AFF"
+                            BorderThickness="0 0 0 1"
+                            Mask="9 9 9 9"/>
+                        <TextBlock
+                            Margin="0 8 0 0"
+                            TextWrapping="Wrap"
+                            Foreground="#575F6E"
+                            FontFamily="Poppins"
+                            FontSize="12"
+                            FontWeight="400"
+                            Text="Confirm phone number with code from sms message"/>
+                    </StackPanel>
+                    <StackPanel
+                        VerticalAlignment="Center"
+                        Grid.Column="1">
+                        <StackPanel
+                            Orientation="Horizontal">
+                            <Image
+                                Margin="16 0 8 0"
+                                Source="Image/Reload.png"/>
+                            <TextBlock
+                                VerticalAlignment="Center"
+                                Foreground="#007AFF"
+                                FontFamily="Roboto"
+                                FontSize="16"
+                                FontWeight="500"
+                                Text="Send again"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+                <StackPanel>
+                    <Button 
+                        Click="ConfirmButton"
+                        Margin="0 16 0 37"
+                        Width="106"
+                        Background="Transparent"
+                        BorderThickness="1"
+                        Foreground="#242731"
+                        BorderBrush="#BBBFC1"
+                        HorizontalContentAlignment="Center"
+                        FontWeight="500"
+                        FontFamily="Poppins"
+                        FontSize="16"
+                        Content="Confirm"/>
+                </StackPanel>
+            </StackPanel>
+            
+            <StackPanel
+                IsVisible="False"
+                Name="ThirdStapReg"
+                Grid.Column="1"
+                Grid.Row="0">
+                <StackPanel
+                    VerticalAlignment="Center"
+                    Margin="0 30 0 0"
+                    Orientation="Horizontal">
+                    <Image
+                        Source="Image/Active indicator.png"/>
+                    <Image
+                        Margin="6 0"
+                        Source="Image/Active line.png"/>
+                    <Image
+                        Source="Image/Active indicator.png"/>
+                    <Image
+                        Margin="6 0"
+                        Source="Image/Active line.png"/>
+                    <Image
+                        Source="Image/Active indicator.png"/>
+                </StackPanel>
+                <StackPanel 
+                    Margin=" 0 40 0 0">
+                    <TextBlock 
+                        FontSize="32"
+                        Foreground="#242731"
+                        FontFamily="Poppins"
+                        FontWeight="700"
+                        Text="Registration"/>
+                    <TextBlock
+                        Margin="0 16 0 0"
+                        FontSize="16"
+                        FontFamily="Roboto"
+                        Foreground="#575F6E"
+                        Text="Fill in the registration data. It will take a couple of minutes. All you need is a phone number and e-mail"
+                        TextWrapping="Wrap"/>
+                </StackPanel>
+                <StackPanel>
+                    <Border
+                        Margin="0 32 0 0"
+                        BorderBrush="#E2E4E5"
+                        BorderThickness="1"
+                        CornerRadius="8">
+                        <StackPanel>
+                            <StackPanel
+                                VerticalAlignment="Center">
+                                <TextBlock
+                                    FontFamily="Roboto"
+                                    FontWeight="400"
+                                    Foreground="#242426"
+                                    FontSize="18"
+                                    Margin="8 8 8 2"
+                                    Text="+1 555 555-1234"/>
+                            </StackPanel>
+                            <StackPanel
+                                Margin="8 0 8 8 "
+                                Orientation="Horizontal"
+                                VerticalAlignment="Center">
+                                <Image
+                                    Source="Image/NumberConfirmed.png"/>
+                                <TextBlock
+                                    Margin="4 0 0 0 "
+                                    FontFamily="Poppins"
+                                    FontWeight="400"
+                                    Foreground="#575F6E"
+                                    FontSize="13"
+                                    Text="Number confirmed"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                    <Border
+                        Margin="0 32 0 0"
+                        BorderBrush="#E2E4E5"
+                        BorderThickness="1"
+                        CornerRadius="8">
+                        <StackPanel
+                            Margin="32">
+                            <StackPanel
+                                VerticalAlignment="Center">
+                                <TextBlock
+                                    FontFamily="Poppins"
+                                    FontWeight="400"
+                                    Foreground="#242426"
+                                    FontSize="14"
+                                    Text="Enter your email"/>
+                                <TextBox
+                                    BorderBrush="#E2E4E5"
+                                    BorderThickness="0 0 0 1"/>
+                            </StackPanel>
+                            <StackPanel
+                                Margin="0 32 0 0"
+                                VerticalAlignment="Center">
+                                <TextBlock
+                                    FontFamily="Poppins"
+                                    FontWeight="400"
+                                    Foreground="#242426"
+                                    FontSize="14"
+                                    Text="Set a password"/>
+                                <TextBox
+                                    Classes="revealPasswordButton"
+                                    PasswordChar="•"
+                                    BorderBrush="#E2E4E5"
+                                    BorderThickness="0 0 0 1"/>
+                                <StackPanel
+                                    Margin="0 8 0 0 "
+                                    Orientation="Horizontal"
+                                    VerticalAlignment="Center">
+                                    <Image
+                                        Source="Image/GoodPassword.png"/>
+                                    <TextBlock
+                                        Margin="4 0 0 0 "
+                                        FontFamily="Poppins"
+                                        FontWeight="400"
+                                        Foreground="#34C759"
+                                        FontSize="12"
+                                        Text="Good password"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+                
+                <StackPanel>
+                    <Button 
+                        Click="RegisterButton"
+                        Margin="0 16 0 37"
+                        Width="169"
+                        Background="#007AFF"
+                        BorderThickness="1"
+                        Foreground="White"
+                        HorizontalContentAlignment="Center"
+                        FontWeight="500"
+                        FontFamily="Poppins"
+                        FontSize="16"
+                        Content="Register now"/>
+                </StackPanel>
+            </StackPanel>
+            
+            <StackPanel
+                Grid.Column="2"
+                Grid.Row="0"
+                HorizontalAlignment="Right">
+                <Image
+                    Tapped="CloseWindow"
+                    Margin="16"
+                    Width="48"
+                    Source="Image/Muted button.png"/>
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
+</Window>

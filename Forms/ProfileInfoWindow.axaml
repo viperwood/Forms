@@ -1,0 +1,637 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        MinHeight="600" MinWidth="800"
+        x:Class="Forms.ProfileInfoWindow"
+        x:CompileBindings="False"
+        ExtendClientAreaChromeHints="NoChrome"
+        ExtendClientAreaToDecorationsHint="True"
+        Title="ProfileInfoWindow">
+    <ScrollViewer>
+        <Grid 
+            Background="White"
+            RowDefinitions="* *"
+            ColumnDefinitions="* * *">
+            <StackPanel 
+                Grid.Column="0"
+                Grid.Row="0">
+                <StackPanel 
+                    VerticalAlignment="Center"
+                    Margin="20"
+                    Orientation="Horizontal">
+                    <Image 
+                        Width="24"
+                        Height="24"
+                        Source="Image/Logo.png"/>
+                    <TextBlock
+                        Foreground="#242731"
+                        FontFamily="Raleway"
+                        FontSize="16"
+                        FontWeight="700"
+                        Margin="13 0  0 0"
+                        Text="company name"
+                        VerticalAlignment="Center"/>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel
+                IsVisible="True"
+                Name="FerstStapProfileInfo"
+                Grid.Column="1"
+                Grid.Row="0">
+                <StackPanel
+                    VerticalAlignment="Center"
+                    Margin="0 30 0 0"
+                    Orientation="Horizontal">
+                    <Image
+                        Source="Image/Active indicator.png"/>
+                    <Image
+                        Margin="6 0"
+                        Source="Image/Default line.png"/>
+                    <Image
+                        Source="Image/Default indicator.png"/>
+                    <Image
+                        Margin="6 0"
+                        Source="Image/Default line.png"/>
+                    <Image
+                        Source="Image/Default indicator.png"/>
+                </StackPanel>
+                <StackPanel 
+                    Margin=" 0 40 0 0">
+                    <TextBlock 
+                        FontSize="32"
+                        Foreground="#242731"
+                        FontFamily="Poppins"
+                        FontWeight="700"
+                        Text="Profile info"/>
+                    <TextBlock
+                        Margin="0 16 0 0"
+                        FontSize="16"
+                        FontFamily="Roboto"
+                        Foreground="#575F6E"
+                        Text="Fill in the data for profile. It will take a couple of minutes. You only need a passport"
+                        TextWrapping="Wrap"/>
+                </StackPanel>
+                <StackPanel 
+                    Orientation="Horizontal"
+                    Margin="0 16 0 0">
+                    <CheckBox/>
+                    <TextBlock
+                        FontWeight="400"
+                        FontSize="16"
+                        FontFamily="Roboto"
+                        Margin="8 0 0 0"
+                        VerticalAlignment="Center"
+                        Text="I agree with"/>
+                    <TextBlock
+                        FontWeight="500"
+                        FontSize="16"
+                        FontFamily="Roboto"
+                        Foreground="#007AFF"
+                        Margin="8 0 0 0"
+                        VerticalAlignment="Center"
+                        Text="Terms of use"/>
+                </StackPanel>
+                <Border 
+                    Margin="0 16 0 0"
+                    BorderBrush="#E2E4E5"
+                    BorderThickness="1"
+                    CornerRadius="8">
+                    <StackPanel>
+                        <StackPanel
+                            Margin="16">
+                            <TextBlock
+                                FontFamily="Poppins"
+                                FontWeight="600"
+                                FontSize="20"
+                                Foreground="#242426"
+                                Text="Personal data"/>
+                            <TextBlock
+                                FontFamily="Poppins"
+                                FontWeight="300"
+                                FontSize="12"
+                                Foreground="#575F6E"
+                                Text="Specify exactly as in your passport"/>
+                        </StackPanel>
+                        <StackPanel
+                            Margin="16 0 0 0 ">
+                            <TextBlock
+                                FontFamily="Poppins"
+                                FontWeight="400"
+                                FontSize="14"
+                                Foreground="#242426"
+                                Margin="0 0 0 8"
+                                Text="First name"/>
+                                <TextBox
+                                    BorderThickness="0 0 0 1"
+                                    BorderBrush="#E2E4E5"/>
+                        </StackPanel>
+                        <StackPanel
+                            Margin="16 16 0 0 ">
+                            <TextBlock
+                                FontFamily="Poppins"
+                                FontWeight="400"
+                                FontSize="14"
+                                Foreground="#242426"
+                                Margin="0 0 0 8"
+                                Text="Second name"/>
+                            <TextBox
+                                BorderThickness="0 0 0 1"
+                                BorderBrush="#E2E4E5"/>
+                        </StackPanel>
+                        <Grid
+                            Margin="0 0 0 16"
+                            ColumnDefinitions="* *"
+                            RowDefinitions="*">
+                            <StackPanel
+                                HorizontalAlignment="Center"
+                                Grid.Column="0"
+                                Margin="16 16 0 0 ">
+                                <TextBlock
+                                    FontFamily="Poppins"
+                                    FontWeight="400"
+                                    FontSize="14"
+                                    Foreground="#242426"
+                                    Margin="0 0 0 8"
+                                    Text="Date of Birth"/>
+                                <CalendarDatePicker
+                                    BorderThickness="0 0 0 1"
+                                    BorderBrush="#E2E4E5"/>
+                            </StackPanel>
+                            <StackPanel
+                                Grid.Column="1"
+                                HorizontalAlignment="Center"
+                                Margin="16 16 0 0">
+                                <TextBlock
+                                    FontFamily="Poppins"
+                                    FontWeight="400"
+                                    FontSize="14"
+                                    Foreground="#242426"
+                                    Margin="0 0 0 8"
+                                    Text="Place of Birth"/>
+                                <ComboBox
+                                    MinWidth="90"
+                                    BorderThickness="0 0 0 1"
+                                    BorderBrush="#E2E4E5">
+                                    <ComboBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <TextBlock 
+                                                Text="{Binding NamePlaces}"/>
+                                        </DataTemplate>
+                                    </ComboBox.ItemTemplate>
+                                </ComboBox>
+                            </StackPanel>
+                        </Grid>
+                    </StackPanel>
+                </Border>
+                <Border
+                    Margin="0 16 0 0"
+                    BorderBrush="#E2E4E5"
+                    BorderThickness="1"
+                    CornerRadius="8">
+                    <StackPanel>
+                        <MaskedTextBox
+                            Mask="000-00-0000"
+                            BorderBrush="Transparent"/>
+                        <StackPanel 
+                            Margin="8 0 8  8"
+                            Orientation="Horizontal">
+                            <Image
+                                Source="Image/Yes.png"/>
+                            <TextBlock
+                                FontFamily="Poppins"
+                                FontWeight="400"
+                                FontSize="13"
+                                Foreground="#575F6E"
+                                Margin="4 0 0 0"
+                                Text="Your ITIN"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+                <Button 
+                    Click="GoNextButtonFerst"
+                    Margin="0 16 0 37"
+                    Width="137"
+                    Background="Transparent"
+                    BorderThickness="1"
+                    BorderBrush="#BBBFC1"
+                    HorizontalContentAlignment="Center">
+                    <StackPanel
+                        Orientation="Horizontal">
+                        <TextBlock 
+                            Foreground="#242731"
+                            FontWeight="500"
+                            FontFamily="Poppins"
+                            FontSize="16"
+                            Text="Go next"/>
+                        <Image
+                            Margin="8 0 0 0"
+                            Width="24"
+                            Source="Image/Next.png"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+            
+            <StackPanel
+                IsVisible="False"
+                Name="SecondStapProfileInfo"
+                Grid.Column="1"
+                Grid.Row="0">
+                <StackPanel
+                    VerticalAlignment="Center"
+                    Margin="0 30 0 0"
+                    Orientation="Horizontal">
+                    <Image
+                        Source="Image/Active indicator.png"/>
+                    <Image
+                        Margin="6 0"
+                        Source="Image/Active line.png"/>
+                    <Image
+                        Source="Image/Active indicator.png"/>
+                    <Image
+                        Margin="6 0"
+                        Source="Image/Default line.png"/>
+                    <Image
+                        Source="Image/Default indicator.png"/>
+                </StackPanel>
+                <StackPanel 
+                    Margin=" 0 40 0 0">
+                    <TextBlock 
+                        FontSize="32"
+                        Foreground="#242731"
+                        FontFamily="Poppins"
+                        FontWeight="700"
+                        Text="Profile info"/>
+                    <TextBlock
+                        Margin="0 16 0 0"
+                        FontSize="16"
+                        FontFamily="Roboto"
+                        Foreground="#575F6E"
+                        Text="Fill in the data for profile. It will take a couple of minutes. You only need a passport"
+                        TextWrapping="Wrap"/>
+                </StackPanel>
+                <Border 
+                    Margin="0 16 0 0"
+                    BorderBrush="#E2E4E5"
+                    BorderThickness="1"
+                    CornerRadius="8">
+                    <StackPanel>
+                        <StackPanel
+                            Margin="16">
+                            <TextBlock
+                                FontFamily="Poppins"
+                                FontWeight="600"
+                                FontSize="18"
+                                Foreground="#242426"
+                                Text="Contacts"/>
+                            <TextBlock
+                                FontFamily="Poppins"
+                                FontWeight="300"
+                                TextWrapping="Wrap"
+                                FontSize="12"
+                                Foreground="#575F6E"
+                                Text="These contacts are used to inform about orders"/>
+                        </StackPanel>
+                        <StackPanel
+                            Margin="16 0 16 16 ">
+                            <Grid
+                                ColumnDefinitions="* 8*">
+                                <StackPanel
+                                    VerticalAlignment="Center"
+                                    Grid.Column="0">
+                                    <Image
+                                        Width="24"
+                                        Source="Image/EmailIcon.png"/>
+                                </StackPanel>
+                                <StackPanel
+                                    VerticalAlignment="Center"
+                                    Grid.Column="1">
+                                    <TextBox
+                                        BorderThickness="0 0 0 1"
+                                        BorderBrush="#E2E4E5"/>
+                                </StackPanel>
+                            </Grid>
+                        </StackPanel>
+                        <StackPanel
+                            Margin="16 0 16 16 ">
+                            <Grid
+                                ColumnDefinitions="* 8*">
+                                <StackPanel
+                                    VerticalAlignment="Center"
+                                    Grid.Column="0">
+                                    <Image
+                                        Width="24"
+                                        Source="Image/PhoneIcon.png"/>
+                                </StackPanel>
+                                <StackPanel
+                                    VerticalAlignment="Center"
+                                    Grid.Column="1">
+                                    <MaskedTextBox
+                                        Mask="+9 999 999-9999"
+                                        BorderThickness="0 0 0 1"
+                                        BorderBrush="#E2E4E5"/>
+                                </StackPanel>
+                            </Grid>
+                        </StackPanel>
+                        <StackPanel
+                            Margin="16">
+                            <TextBlock
+                                FontFamily="Poppins"
+                                FontWeight="600"
+                                FontSize="18"
+                                Foreground="#242426"
+                                Text="Social network"/>
+                            <TextBlock
+                                FontFamily="Poppins"
+                                FontWeight="300"
+                                TextWrapping="Wrap"
+                                FontSize="12"
+                                Foreground="#575F6E"
+                                Text="Indicate the desired communication method"/>
+                        </StackPanel>
+                        <Grid
+                            Margin="0 0 0 8"
+                            ColumnDefinitions="* *"
+                            RowDefinitions="*">
+                            <StackPanel
+                                Grid.Column="0"
+                                Margin="16 16 0 0 ">
+                                <ComboBox
+                                    MinWidth="90"
+                                    BorderThickness="0 0 0 1"
+                                    BorderBrush="#E2E4E5">
+                                    <ComboBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <TextBlock 
+                                                Text="{Binding NamePlaces}"/>
+                                        </DataTemplate>
+                                    </ComboBox.ItemTemplate>
+                                </ComboBox>
+                            </StackPanel>
+                            <StackPanel
+                                Grid.Column="1"
+                                Margin="0 16 16 0">
+                                <TextBox
+                                    BorderThickness="0 0 0 1"
+                                    BorderBrush="#E2E4E5"/>
+                            </StackPanel>
+                        </Grid>
+                        <Grid
+                            Margin="0 0 0 16"
+                            ColumnDefinitions="* *"
+                            RowDefinitions="*">
+                            <StackPanel
+                                Grid.Column="0"
+                                Margin="16 16 0 0 ">
+                                <ComboBox
+                                    MinWidth="90"
+                                    BorderThickness="0 0 0 1"
+                                    BorderBrush="#E2E4E5">
+                                    <ComboBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <TextBlock 
+                                                Text="{Binding NamePlaces}"/>
+                                        </DataTemplate>
+                                    </ComboBox.ItemTemplate>
+                                </ComboBox>
+                            </StackPanel>
+                            <StackPanel
+                                Grid.Column="1"
+                                Margin="0 16 16 0">
+                                <TextBox
+                                    BorderThickness="0 0 0 1"
+                                    BorderBrush="#E2E4E5"/>
+                            </StackPanel>
+                        </Grid>
+                        <StackPanel
+                            Margin="0 16 8 16"
+                            Orientation="Horizontal">
+                            <Image
+                                Margin="16 0 8 0"
+                                Source="Image/AddNewIcon.png"/>
+                            <TextBlock
+                                VerticalAlignment="Center"
+                                Foreground="#007AFF"
+                                FontFamily="Roboto"
+                                FontSize="16"
+                                FontWeight="500"
+                                Text="Add more"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+                <Button 
+                    Click="GoNextButtonSecond"
+                    Margin="0 16 0 37"
+                    Width="137"
+                    Background="Transparent"
+                    BorderThickness="1"
+                    BorderBrush="#BBBFC1"
+                    HorizontalContentAlignment="Center">
+                    <StackPanel
+                        Orientation="Horizontal">
+                        <TextBlock 
+                            Foreground="#242731"
+                            FontWeight="500"
+                            FontFamily="Poppins"
+                            FontSize="16"
+                            Text="Go next"/>
+                        <Image
+                            Margin="8 0 0 0"
+                            Width="24"
+                            Source="Image/Next.png"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+            
+            <StackPanel
+                IsVisible="False"
+                Name="ThirdStapProfileInfo"
+                Grid.Column="1"
+                Grid.Row="0">
+                <StackPanel
+                    VerticalAlignment="Center"
+                    Margin="0 30 0 0"
+                    Orientation="Horizontal">
+                    <Image
+                        Source="Image/Active indicator.png"/>
+                    <Image
+                        Margin="6 0"
+                        Source="Image/Active line.png"/>
+                    <Image
+                        Source="Image/Active indicator.png"/>
+                    <Image
+                        Margin="6 0"
+                        Source="Image/Active line.png"/>
+                    <Image
+                        Source="Image/Active indicator.png"/>
+                </StackPanel>
+                <StackPanel 
+                    Margin=" 0 40 0 0">
+                    <TextBlock 
+                        FontSize="32"
+                        Foreground="#242731"
+                        FontFamily="Poppins"
+                        FontWeight="700"
+                        Text="Profile info"/>
+                    <TextBlock
+                        Margin="0 16 0 0"
+                        FontSize="16"
+                        FontFamily="Roboto"
+                        Foreground="#575F6E"
+                        Text="Fill in the data for profile. It will take a couple of minutes. You only need a passport"
+                        TextWrapping="Wrap"/>
+                </StackPanel>
+                <Border 
+                    Margin="0 16 0 0"
+                    BorderBrush="#E2E4E5"
+                    BorderThickness="1"
+                    CornerRadius="8">
+                    <StackPanel>
+                        <StackPanel
+                            Margin="16">
+                            <TextBlock
+                                FontFamily="Poppins"
+                                FontWeight="600"
+                                FontSize="20"
+                                Foreground="#242426"
+                                Text="Delivery address"/>
+                            <TextBlock
+                                FontFamily="Poppins"
+                                FontWeight="300"
+                                TextWrapping="Wrap"
+                                FontSize="12"
+                                Foreground="#575F6E"
+                                Text="Used for shipping orders"/>
+                        </StackPanel>
+                        <StackPanel
+                            Margin="16 0 16 0 ">
+                            <TextBlock
+                                FontFamily="Poppins"
+                                FontWeight="400"
+                                FontSize="14"
+                                Foreground="#242426"
+                                Margin="0 0 0 8"
+                                Text="Address"/>
+                            <TextBox
+                                BorderThickness="0 0 0 1"
+                                BorderBrush="#E2E4E5"/>
+                        </StackPanel>
+                        <StackPanel
+                            Margin="16 16 0 0 ">
+                            <TextBlock
+                                FontFamily="Poppins"
+                                FontWeight="400"
+                                FontSize="14"
+                                Foreground="#242426"
+                                Margin="0 0 0 8"
+                                Text="City"/>
+                            <ComboBox
+                                BorderBrush="#E2E4E5"
+                                BorderThickness="0 0 0 1"
+                                MinWidth="230">
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackPanel>
+                                            <TextBlock
+                                                Text="{Binding NameCity}"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>
+                        </StackPanel>
+                        <Grid
+                            Margin="0 0 0 16"
+                            ColumnDefinitions="* *"
+                            RowDefinitions="*">
+                            <StackPanel
+                                HorizontalAlignment="Center"
+                                Grid.Column="0"
+                                Margin="16 16 0 0 ">
+                                <TextBlock
+                                    FontFamily="Poppins"
+                                    FontWeight="400"
+                                    FontSize="14"
+                                    Foreground="#242426"
+                                    Margin="0 0 0 8"
+                                    Text="Country"/>
+                                <ComboBox
+                                    BorderBrush="#E2E4E5"
+                                    BorderThickness="0 0 0 1"
+                                    MinWidth="100">
+                                    <ComboBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <StackPanel>
+                                                <TextBlock
+                                                    Text="{Binding NameCity}"/>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </ComboBox.ItemTemplate>
+                                </ComboBox>
+                            </StackPanel>
+                            <StackPanel
+                                Grid.Column="1"
+                                HorizontalAlignment="Center"
+                                Margin="16 16 16 0">
+                                <TextBlock
+                                    FontFamily="Poppins"
+                                    FontWeight="400"
+                                    FontSize="14"
+                                    Foreground="#242426"
+                                    Margin="0 0 0 8"
+                                    Text="Zip code"/>
+                                <TextBox
+                                    MinWidth="100"
+                                    BorderBrush="#E2E4E5"
+                                    BorderThickness="0 0 0 1"/>
+                            </StackPanel>
+                        </Grid>
+                        <StackPanel
+                            Margin="16 0 16 16 ">
+                            <TextBlock
+                                FontFamily="Poppins"
+                                FontWeight="400"
+                                FontSize="14"
+                                Foreground="#242426"
+                                Margin="0 0 0 8"
+                                Text="Optional"/>
+                            <TextBox
+                                BorderThickness="0 0 0 1"
+                                BorderBrush="#E2E4E5"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+                <Button 
+                    Margin="0 16 0 37"
+                    Width="128"
+                    Background="#007AFF"
+                    HorizontalContentAlignment="Center">
+                    <StackPanel
+                        Orientation="Horizontal">
+                        <Image
+                            Width="24"
+                            Source="Image/SaveIcon.png"/>
+                        <TextBlock 
+                            Margin="8 0 0 0"
+                            Foreground="White"
+                            FontWeight="500"
+                            FontFamily="Poppins"
+                            FontSize="16"
+                            Text="Save"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+            
+            <StackPanel
+                Grid.Column="2"
+                Grid.Row="0"
+                HorizontalAlignment="Right">
+                <Image
+                    Tapped="CloseWindow"
+                    Margin="16"
+                    Width="48"
+                    Source="Image/Muted button.png"/>
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
+</Window>
